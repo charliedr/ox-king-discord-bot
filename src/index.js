@@ -24,13 +24,27 @@ const client = new Client({
 // list of compliments
 let compliments = [
   "I approve of your life decisions.",
-  "You are more fun than anyone or anything I know, including bubble wrap.",
-  "Even if you were cloned, you'd still be one of a kind - and the better looking one",
-  "You know what's awesome? Chocolate cake, oh and your face.",
-  "The chance of meeting another person like you is the only reason I talk to strangers.",
-  "You look great today.",
-  "Smiles look good on you.",
-  "Nothing can stop you.",
+  "you are more fun than bubble wrap.",
+  "even if you were cloned, you'd still be one of a kind - and the better looking one.",
+  "you know what's awesome? Chocolate cake, oh and your face.",
+  "the chance of meeting another person like you is the only reason I talk to strangers.",
+  "you look great today.",
+  "smiles look good on you.",
+  "when you make up your mind, nothing can stop you.",
+  "I'm so proud of you.",
+  "your smile is contagious.",
+  "you're like sunshinne on a rainy day.",
+  "colors seem brighter when you're around.",
+  "being around you is like a happy little vacation.",
+  "is that your picture next to 'charming' in the dictionary?",
+  "you were cool way before hipsters were cool.",
+  "I appreciate you.",
+  "everything would be better if more people were like you.",
+  "you are an incredible human.",
+  "you're better than a triple-scoop ice cream cone - with sprinkles.",
+  "if you were a box of crayons, you'd be the big industrial name-brand one with a built-in sharpener.",
+  "in high school, I bet you were voted 'most likely to continue being awesome.'",
+  "you're even better than a unicorn because you're real.",
 ];
 
 // randomizes the compliments, then returns the [0] compliment when called
@@ -65,7 +79,7 @@ client.on("messageCreate", (message) => {
     // totalHugs++
     getQuote();
     message.reply(
-      `_Ox King gives ${message.author.username} a biiig hug!_\n${compliments[0]}`
+      `Ox King gives ${message.author.username} a biiig hug and says, "${compliments[0]}"`
     );
     // message.reply(`_Ox King gives ${message.author.username} a big hug!_\n${compliments[0]}\n\nTotal hugs given: ${totalHugs}`);
     // console.log(compliments[0]);
