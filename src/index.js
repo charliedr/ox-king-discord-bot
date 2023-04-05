@@ -1,6 +1,6 @@
 // Developer Portal: discord.com/developers/applications
 // Documentation: discord.js.org
-// Hosting: Github + Daki
+// Hosting: Github + Heroku
 
 // TO DO
 // Track how many hugs the bot has received
