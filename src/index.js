@@ -3,8 +3,7 @@
 // Hosting: Github + Daki
 
 // TO DO
-// Track how many hugs he has received
-// Select a random compliment or dad-ism from an array to tell the user
+// Track how many hugs the bot has received
 
 require("dotenv").config();
 
@@ -26,6 +25,9 @@ const client = new Client({
 let compliments = [
   "I approve of your life decisions.",
   "You are more fun than anyone or anything I know, including bubble wrap.",
+  "Even if you were cloned, you'd still be one of a kind - and the better looking one",
+  "You know what's awesome? Chocolate cake, oh and your face.",
+  "The chance of meeting another person like you is the only reason I talk to strangers.",
   "You look great today.",
   "Smiles look good on you.",
   "Nothing can stop you.",
@@ -44,6 +46,8 @@ function getQuote() {
   randomize(compliments);
 }
 
+// let totalHugs = 0;
+
 // listens for when the bot is ready
 // cannot redefine 'client', hence the 'c'
 client.on("ready", (c) => {
@@ -58,8 +62,12 @@ client.on("messageCreate", (message) => {
 
   // console.log(msg.content);
   if (message.content.toLowerCase() === "!hug") {
-    getQuote()
-    message.reply(`_Ox King gives ${message.author.username} a big hug!_\n${compliments[0]}`);
+    // totalHugs++
+    getQuote();
+    message.reply(
+      `_Ox King gives ${message.author.username} a biiig hug!_\n${compliments[0]}`
+    );
+    // message.reply(`_Ox King gives ${message.author.username} a big hug!_\n${compliments[0]}\n\nTotal hugs given: ${totalHugs}`);
     // console.log(compliments[0]);
   }
 });
