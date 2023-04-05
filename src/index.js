@@ -1,5 +1,6 @@
 // Developer Portal: discord.com/developers/applications
 // Documentation: discord.js.org
+// Hosting: Github + Daki
 
 // TO DO
 // Track how many hugs he has received
@@ -21,6 +22,28 @@ const client = new Client({
   ],
 });
 
+// list of compliments
+let compliments = [
+  "I approve of your life decisions.",
+  "You are more fun than anyone or anything I know, including bubble wrap.",
+  "You look great today.",
+  "Smiles look good on you.",
+  "Nothing can stop you.",
+];
+
+// randomizes the compliments, then returns the [0] compliment when called
+function randomize(a) {
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function getQuote() {
+  randomize(compliments);
+}
+
 // listens for when the bot is ready
 // cannot redefine 'client', hence the 'c'
 client.on("ready", (c) => {
@@ -35,7 +58,9 @@ client.on("messageCreate", (message) => {
 
   // console.log(msg.content);
   if (message.content.toLowerCase() === "!hug") {
-    message.reply(`Ox King gives ${message.author.username} a _big_ hug.`);
+    getQuote()
+    message.reply(`_Ox King gives ${message.author.username} a big hug!_\n${compliments[0]}`);
+    // console.log(compliments[0]);
   }
 });
 
